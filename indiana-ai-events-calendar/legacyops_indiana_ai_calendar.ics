@@ -1,0 +1,202 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//LegacyOps Studio//Indiana AI Events Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:America/Indiana/Indianapolis
+X-LIC-LOCATION:America/Indiana/Indianapolis
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+TZNAME:EDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+TZNAME:EST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:indypl-discover-ai-2026-07-03@legacyops-studio
+DTSTAMP:20260701T120000Z
+DTSTART;TZID=America/Indiana/Indianapolis:20260703T140000
+DTEND;TZID=America/Indiana/Indianapolis:20260703T160000
+SUMMARY:[FULL/waitlist] Discover Artificial Intelligence - IndyPL Eagle Branch
+LOCATION:Eagle Branch\, Indianapolis Public Library\, 3905 Moller Rd\, Indianapolis\, IN 46254
+DESCRIPTION:Free hands-on AI basics class. This session reported FULL with waitlist as of 2026-07-01 - check https://attend.indypl.org/events for the next rotating-branch session before relying on this date. Host: Indianapolis Public Library.
+URL:https://attend.indypl.org/event/16379181
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:ibe-corporate-luncheon-2026-07-17@legacyops-studio
+DTSTAMP:20260701T120000Z
+DTSTART;TZID=America/Indiana/Indianapolis:20260717T100000
+DTEND;TZID=America/Indiana/Indianapolis:20260717T130000
+SUMMARY:Indiana Black Expo - PS&E Corporate Luncheon
+LOCATION:Sagamore Ballroom\, Indiana Convention Center\, Indianapolis\, IN
+DESCRIPTION:Ticketed community luncheon during Summer Celebration. Buy tickets via SummerCelebration.net. Host: Indiana Black Expo\, Inc. Networking opportunity with Central Indiana Black business and civic leaders.
+URL:https://www.indianablackexpo.com/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:in-ai-roadshow-2026-07-21-unconfirmed@legacyops-studio
+DTSTAMP:20260701T120000Z
+DTSTART;TZID=America/Indiana/Indianapolis:20260721T080000
+DTEND;TZID=America/Indiana/Indianapolis:20260721T110000
+SUMMARY:[VERIFY BEFORE ATTENDING] IN AI Roadshow - possible Indianapolis stop
+LOCATION:Indianapolis\, IN (venue TBD)
+DESCRIPTION:LOW CONFIDENCE - this date appeared once in search results and could not be re-confirmed. Verify directly at https://www.cicpindiana.com/ai-roadshows/ before making plans. If real\, this is a top-priority event: a state-backed small business AI adoption workshop.
+URL:https://www.cicpindiana.com/ai-roadshows/
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:hendricks-county-women-connect-2026-07-23@legacyops-studio
+DTSTAMP:20260701T120000Z
+DTSTART;TZID=America/Indiana/Indianapolis:20260723T170000
+DTEND;TZID=America/Indiana/Indianapolis:20260723T190000
+SUMMARY:Hendricks County Women Connect (July session)
+LOCATION:Avon\, IN (venue TBD - past sessions at Cooper's Hawk Winery\, 8696 E US Hwy 36\, Avon\, IN 46123)
+DESCRIPTION:Women-focused networking with a 3-minute pitch opportunity. Hosted by Avon\, Brownsburg\, Danville & Plainfield Chambers of Commerce. Prepare your LegacyOps Studio pitch. Verify exact time/venue at https://www.avonchamber.org/hendricks-county-women-connect/
+URL:https://www.avonchamber.org/hendricks-county-women-connect/
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:techpoint-community-connect-2026-07-24@legacyops-studio
+DTSTAMP:20260701T120000Z
+DTSTART;TZID=America/Indiana/Indianapolis:20260724T100000
+DTEND;TZID=America/Indiana/Indianapolis:20260724T150000
+SUMMARY:TechPoint Community Connect: Building a Workforce AI Can't Replace
+LOCATION:NCAA Hall of Champions and Conference Center\, 700 W Washington St\, Indianapolis\, IN
+DESCRIPTION:Panel + Xtern Emerging Talent Showcase on AI and workforce readiness. Top-priority networking event. Bring business cards and a one-pager on LegacyOps Studio. Host: TechPoint + CICP.
+URL:https://techpoint.org/communityconnect/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:startup-ladies-study-hall-2026-07-15@legacyops-studio
+DTSTAMP:20260701T120000Z
+DTSTART;TZID=America/Indiana/Indianapolis:20260715T180000
+DTEND;TZID=America/Indiana/Indianapolis:20260715T200000
+SUMMARY:Startup Ladies - Startup Study Hall
+LOCATION:Indianapolis\, IN (venue varies - check thestartupladies.org/events)
+DESCRIPTION:Biweekly women-founder networking (1st & 3rd Wednesdays\, 6-8pm ET). Confirm venue at https://www.thestartupladies.org/events
+URL:https://www.thestartupladies.org/events
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:startup-ladies-study-hall-2026-08-05@legacyops-studio
+DTSTAMP:20260701T120000Z
+DTSTART;TZID=America/Indiana/Indianapolis:20260805T180000
+DTEND;TZID=America/Indiana/Indianapolis:20260805T200000
+SUMMARY:Startup Ladies - Startup Study Hall
+LOCATION:Indianapolis\, IN (venue varies - check thestartupladies.org/events)
+DESCRIPTION:Biweekly women-founder networking (1st & 3rd Wednesdays\, 6-8pm ET). Confirm venue at https://www.thestartupladies.org/events
+URL:https://www.thestartupladies.org/events
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:startup-ladies-study-hall-2026-08-19@legacyops-studio
+DTSTAMP:20260701T120000Z
+DTSTART;TZID=America/Indiana/Indianapolis:20260819T180000
+DTEND;TZID=America/Indiana/Indianapolis:20260819T200000
+SUMMARY:Startup Ladies - Startup Study Hall
+LOCATION:Indianapolis\, IN (venue varies - check thestartupladies.org/events)
+DESCRIPTION:Biweekly women-founder networking (1st & 3rd Wednesdays\, 6-8pm ET). Confirm venue at https://www.thestartupladies.org/events
+URL:https://www.thestartupladies.org/events
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:startup-ladies-study-hall-2026-09-02@legacyops-studio
+DTSTAMP:20260701T120000Z
+DTSTART;TZID=America/Indiana/Indianapolis:20260902T180000
+DTEND;TZID=America/Indiana/Indianapolis:20260902T200000
+SUMMARY:Startup Ladies - Startup Study Hall
+LOCATION:Indianapolis\, IN (venue varies - check thestartupladies.org/events)
+DESCRIPTION:Biweekly women-founder networking (1st & 3rd Wednesdays\, 6-8pm ET). Confirm venue at https://www.thestartupladies.org/events
+URL:https://www.thestartupladies.org/events
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:startup-ladies-study-hall-2026-09-16@legacyops-studio
+DTSTAMP:20260701T120000Z
+DTSTART;TZID=America/Indiana/Indianapolis:20260916T180000
+DTEND;TZID=America/Indiana/Indianapolis:20260916T200000
+SUMMARY:Startup Ladies - Startup Study Hall
+LOCATION:Indianapolis\, IN (venue varies - check thestartupladies.org/events)
+DESCRIPTION:Biweekly women-founder networking (1st & 3rd Wednesdays\, 6-8pm ET). Confirm venue at https://www.thestartupladies.org/events
+URL:https://www.thestartupladies.org/events
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:startup-ladies-study-hall-2026-10-07@legacyops-studio
+DTSTAMP:20260701T120000Z
+DTSTART;TZID=America/Indiana/Indianapolis:20261007T180000
+DTEND;TZID=America/Indiana/Indianapolis:20261007T200000
+SUMMARY:Startup Ladies - Startup Study Hall
+LOCATION:Indianapolis\, IN (venue varies - check thestartupladies.org/events)
+DESCRIPTION:Biweekly women-founder networking (1st & 3rd Wednesdays\, 6-8pm ET). Confirm venue at https://www.thestartupladies.org/events
+URL:https://www.thestartupladies.org/events
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:startup-ladies-study-hall-2026-10-21@legacyops-studio
+DTSTAMP:20260701T120000Z
+DTSTART;TZID=America/Indiana/Indianapolis:20261021T180000
+DTEND;TZID=America/Indiana/Indianapolis:20261021T200000
+SUMMARY:Startup Ladies - Startup Study Hall
+LOCATION:Indianapolis\, IN (venue varies - check thestartupladies.org/events)
+DESCRIPTION:Biweekly women-founder networking (1st & 3rd Wednesdays\, 6-8pm ET). Confirm venue at https://www.thestartupladies.org/events
+URL:https://www.thestartupladies.org/events
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:women-hi-tech-gala-2026-10-01@legacyops-studio
+DTSTAMP:20260701T120000Z
+DTSTART;TZID=America/Indiana/Indianapolis:20261001T180000
+DTEND;TZID=America/Indiana/Indianapolis:20261001T210000
+SUMMARY:[Time TBD] Women & Hi Tech - Leading Light Awards & Scholarship Gala
+LOCATION:Indiana Roof Ballroom\, 140 W Washington St\, Indianapolis\, IN
+DESCRIPTION:Individual ticket pricing not yet released as of 2026-07-01 - email events@womenandhitech.org. Time shown is a placeholder (typical evening gala hours) - confirm before attending.
+URL:https://womenandhitech.org/event-6422026
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:techpoint-ai-innovation-network-oct-2026-placeholder@legacyops-studio
+DTSTAMP:20260701T120000Z
+DTSTART;TZID=America/Indiana/Indianapolis:20261015T153000
+DTEND;TZID=America/Indiana/Indianapolis:20261015T170000
+SUMMARY:[DATE UNCONFIRMED] Indiana AI Innovation Network - October Meeting (Eli Lilly case study)
+LOCATION:SEP offices\, Indianapolis area (confirm exact address)
+DESCRIPTION:Exact October date not posted as of 2026-07-01 - placeholder set mid-month. Verify at https://techpoint.org/tech-events/techpoint-indiana-ai-innovation-network-october-meeting/ before relying on this date.
+URL:https://techpoint.org/tech-events/techpoint-indiana-ai-innovation-network-october-meeting/
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:monthly-monitor-check-2026-08-01@legacyops-studio
+DTSTAMP:20260701T120000Z
+DTSTART;VALUE=DATE:20260801
+SUMMARY:MONITOR CHECK: Ivy Tech AI Essentials + ISBDC + CICP AI Roadshow pages
+DESCRIPTION:Monthly reminder to check for newly posted dates:\n- https://www.ivytech.edu/classes/skills-training-classes/computers-and-it-comp/compgai1-google-ai-essentials-prep/\n- https://www.isbdc.org/training-education/\n- https://www.cicpindiana.com/ai-roadshows/\n- https://attend.indypl.org/events\n- https://techpoint.org/tech-events/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:monthly-monitor-check-2026-09-01@legacyops-studio
+DTSTAMP:20260701T120000Z
+DTSTART;VALUE=DATE:20260901
+SUMMARY:MONITOR CHECK: Ivy Tech AI Essentials + ISBDC + CICP AI Roadshow pages
+DESCRIPTION:Monthly reminder to check for newly posted dates:\n- https://www.ivytech.edu/classes/skills-training-classes/computers-and-it-comp/compgai1-google-ai-essentials-prep/\n- https://www.isbdc.org/training-education/\n- https://www.cicpindiana.com/ai-roadshows/\n- https://attend.indypl.org/events\n- https://techpoint.org/tech-events/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:monthly-monitor-check-2026-10-01@legacyops-studio
+DTSTAMP:20260701T120000Z
+DTSTART;VALUE=DATE:20261001
+SUMMARY:MONITOR CHECK: Ivy Tech AI Essentials + ISBDC + CICP AI Roadshow pages
+DESCRIPTION:Monthly reminder to check for newly posted dates:\n- https://www.ivytech.edu/classes/skills-training-classes/computers-and-it-comp/compgai1-google-ai-essentials-prep/\n- https://www.isbdc.org/training-education/\n- https://www.cicpindiana.com/ai-roadshows/\n- https://attend.indypl.org/events\n- https://techpoint.org/tech-events/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

@@ -175,3 +175,34 @@ I did not push anything to your actual Google Calendar — the `.ics` file is a 
 - Every event above was found via live web search on 2026-07-01 by four parallel research passes covering: (1) TechPoint / IN AI initiative / Indiana CTSI, (2) Ivy Tech / Grow with Google / Indiana SBDC, (3) Chambers of Commerce / women & minority business orgs, (4) local meetups / libraries / coworking / startup community.
 - Several official sites (ivytech.edu, isbdc.org, techpoint.org, meetup.com, indianactsi.org) block automated page fetching (HTTP 403), so details for those events came from indexed search-result snippets of the official pages rather than a direct re-render. Where a detail (time, cost, exact venue) could not be independently confirmed, it's marked **TBD** or flagged in the confidence note — verify directly before finalizing plans.
 - Nothing in this calendar was invented. Anything without a solid confirmed date was moved to the Monitor list rather than assigned a guessed date, with one exception: the IN AI Roadshow's Jul 21 date, which is explicitly flagged LOW CONFIDENCE and marked "verify immediately" everywhere it appears, because it's too mission-critical to omit entirely.
+
+---
+
+## 12. Funding & Capital — Apply Now / Monitor / Skip
+
+Events build relationships; this section is actual money and resources you can put toward the August 15 launch. Same three-tier logic as the calendar: **Apply Now** = no deadline blocking you, act this week. **Monitor** = real program, but you're between windows — bookmark and set a reminder. **Skip** = real program, wrong fit for a service/consulting business right now, no need to chase it.
+
+### Apply Now — do this before anything else on this list
+
+| Program | What you get | How to act |
+|---|---|---|
+| **⭐ Central Indiana Women's Business Center (CIWBC)** | Capital access **$1,000–$50,000+** not available through traditional banks, plus free ongoing coaching (accounting, HR, ops). 2025 SBA Women's Business Center of the Year. | Call Stephanie James: 317-464-2232, or visit 111 Monument Circle Suite 1950, Indianapolis. No deadline — this is your #1 move. |
+| **Indy Black Chamber of Commerce — B.L.U.E. lending** | Member-exclusive lending; past grant partnerships (Comcast, Cummins, IKEA, Lake City Bank) funded up to $40,000 for Black-owned Indianapolis/Marion County businesses. | Join IBCC, then check indybcc.org/loans-and-grants-opportunities for what's currently open. |
+| **IBE Exhibit Hall vendor/exhibitor booth** | Direct booth in front of 300,000+ Summer Celebration attendees (Jul 9–19). Early-bird pricing closed Feb 28, 2026, but standard registration may still be open until closer to the event. | **Check indianablackexpo.com/summer-celebration/exhibitors.asp today** — the event starts Jul 9, so if standard registration is still open, it closes within days. |
+
+### Monitor — real programs, you're between windows
+
+| Program | Pattern seen | Check back |
+|---|---|---|
+| IBE Business Training Institute (BTI), Central Indiana Cohort | Free 12-week program, $5,000 award for top performer + growth-grant eligibility. 2026 cohort applications already closed. | Watch indianablackexpo.com/ibe-business-training-institute/ — also consider pitching yourself as a guest AI/automation instructor for the current cohort instead of waiting. |
+| Indianapolis Urban League Entrepreneurship Center, Cohort 14 | Cohort 13 (Aug–Oct 2026) applications closed Jun 30. | Watch indplsul.org/the-entrepreneurship-center-program/ — call 317-693-7603 to ask about Cohort 14 timing directly rather than waiting for a posting. |
+| Comcast RISE | $5,000 grant + tech/marketing/consulting package. Past windows were short, city-specific (May 2025: Boston, Grand Rapids, Nashville, Seattle, South Valley UT). No 2026 date confirmed. | Bookmark ComcastRISE.com. |
+| Indy Black Businesses Accelerator Grant | $500 micro-grant; current round closed. | Subscribe to the newsletter at indyblackbusinesses.com. |
+| Enterprise Corps (Indy Chamber + IU Kelley + Indy Black Chamber + Mid-States MSDC) | Real accelerator for minority/women-owned businesses; no public 2026 application details found. | Call Indy Chamber directly and ask when the next cohort opens. |
+| CICF/Indianapolis Foundation "Capacity Lab" | Grants for grassroots, BIPOC-serving orgs in the entrepreneurship-support ecosystem. 2025/26 window was Dec 10–Jan 23 (closed). | Reopens on a similar Dec–Jan cadence — best fit if you frame LegacyOps as building capacity for *other* founders/nonprofits (your templates/SOPs work), not pure consulting revenue. Check cicf.org/grants around November 2026. |
+
+### Skip — real, but not a fit for a service consultancy right now
+
+- **Elevate Ventures Community Ideation Fund** ($5,000–$20,000) and **Indiana Innovation Voucher** (up to $50,000) — both require a tech/product with R&D and a university research partner, plus revenue caps. Revisit only if you productize (e.g., a proprietary SaaS tool or template platform), not for consulting services.
+
+**Missed-window pattern to notice:** several of these (IBE vendor early-bird, BTI cohort, Capacity Lab, ECP Cohort 13) run on annual cycles that already opened and closed earlier in 2026. The lesson for next year: Nov–Feb is prime grant/cohort application season in Central Indiana. I've added a note to the Monitor list above for when each is likely to reopen — worth a standing quarterly check rather than finding out after the window closed again.

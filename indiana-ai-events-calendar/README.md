@@ -182,6 +182,14 @@ I did not push anything to your actual Google Calendar — the `.ics` file is a 
 
 Events build relationships; this section is actual money and resources you can put toward the August 15 launch. Same three-tier logic as the calendar: **Apply Now** = no deadline blocking you, act this week. **Monitor** = real program, but you're between windows — bookmark and set a reminder. **Skip** = real program, wrong fit for a service/consulting business right now, no need to chase it.
 
+### ⚠️ Policy update (confirmed Jul 15–16, 2026 — verified across Mirror Indy, WFYI, Axios Indy, Indiana Capital Chronicle, IBJ, WTHR, Indiana Lawyer)
+
+Gov. Braun ended Indiana's **state-level** Minority and Women's Business Enterprises (M/WBE) contracting preference program and the Governor's Commission on Supplier Diversity, following an AG Rokita opinion calling the race/sex-based preferences unconstitutional. Veteran-owned preferences were explicitly kept (ruled lawful). This is specifically about **state government contract set-asides** — it does not touch the private, philanthropic, and federal programs below. Separately at the federal level, the SBA's 8(a) program underwent a major reset in Jan 2026 (1,000+ suspensions/terminations) and a bill to eliminate the WOSB federal contracting program has been introduced in Congress — so government-contracting-preference routes are under pressure nationally, not just in Indiana. **Net effect for LegacyOps Studio: don't build your funding plan around state/federal contracting set-asides right now — lean into the private, corporate, and philanthropic paths below, which are unaffected.**
+
+- **Affected / now defunct:** Indiana state M/WBE certification's *contracting preference weight* (IDOA Division of Supplier Diversity) — the certification itself may still exist for tracking, but it no longer carries preferential weight in state contract awards.
+- **Uncertain, verify before relying on:** Elevate Ventures' minority-focused funds (tied to state economic development dollars under the same administration) — call and ask directly rather than assuming they're intact.
+- **Unaffected (private/philanthropic/federal, not state contracting):** CIWBC, Indy Black Chamber (B.L.U.E. + corporate grants), IBE's BTI and Minority Small Business Series, CICF/Indianapolis Foundation, Comcast RISE, and every corporate supplier-diversity relationship below.
+
 ### Apply Now — do this before anything else on this list
 
 | Program | What you get | How to act |
@@ -189,6 +197,8 @@ Events build relationships; this section is actual money and resources you can p
 | **⭐ Central Indiana Women's Business Center (CIWBC)** | Capital access **$1,000–$50,000+** not available through traditional banks, plus free ongoing coaching (accounting, HR, ops). 2025 SBA Women's Business Center of the Year. | Call Stephanie James: 317-464-2232, or visit 111 Monument Circle Suite 1950, Indianapolis. No deadline — this is your #1 move. |
 | **Indy Black Chamber of Commerce — B.L.U.E. lending** | Member-exclusive lending; past grant partnerships (Comcast, Cummins, IKEA, Lake City Bank) funded up to $40,000 for Black-owned Indianapolis/Marion County businesses. | Join IBCC, then check indybcc.org/loans-and-grants-opportunities for what's currently open. |
 | **IBE Exhibit Hall vendor/exhibitor booth** | Direct booth in front of 300,000+ Summer Celebration attendees (Jul 9–19). Early-bird pricing closed Feb 28, 2026, but standard registration may still be open until closer to the event. | **Check indianablackexpo.com/summer-celebration/exhibitors.asp today** — the event starts Jul 9, so if standard registration is still open, it closes within days. |
+| **Amber Grant (WomensNet)** | $10,000 awarded to 3 women-owned businesses *every month*, plus one $25,000 year-end grant to a monthly winner. Rolling, ongoing — accepting applications right now. | Apply at ambergrantsforwomen.com — no cohort, no waiting, resubmit monthly if you don't win. |
+| **Business Equity for Indy (BEI) — Procurement Roundtable** | Joint CICP + Indy Chamber + Indianapolis Urban League initiative connecting Black-owned suppliers directly to corporate procurement at Eli Lilly, Cummins, Anthem/Elevance, IU Health, Citizens Energy, Roche, Salesforce — a private corporate pledge, not a government contract, so untouched by the state rollback above. Quarterly in-person roundtables. | businessequityindy.com/priorities/procurement/ |
 
 ### Monitor — real programs, you're between windows
 

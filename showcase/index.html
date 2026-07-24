@@ -1,0 +1,535 @@
+<title>Proof to Possibility — Fal Mensah</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{
+  --ink0:#0B1116; --ink1:#101A21; --ink2:#16232C; --ink3:#1D2E39;
+  --line:rgba(125,190,200,.14); --line2:rgba(125,190,200,.28);
+  --ivory:#F2EDE4; --muted:#9AAAB2; --dim:#6E7F88;
+  --teal:#35C4BD; --teal-soft:rgba(53,196,189,.12);
+  --amber:#E8A25C; --amber-soft:rgba(232,162,92,.12);
+  --coral:#E07856;
+  --disp:"SF Pro Display","Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;
+  --body:"SF Pro Text","Segoe UI",system-ui,sans-serif;
+  --mono:ui-monospace,"Cascadia Code","SF Mono",Menlo,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--ink0); color:var(--ivory);
+  font-family:var(--body); font-size:16px; line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
+  background:
+    radial-gradient(900px 500px at 85% -10%, rgba(53,196,189,.08), transparent 60%),
+    radial-gradient(700px 420px at -10% 110%, rgba(232,162,92,.06), transparent 60%);
+}
+main{position:relative; z-index:1}
+a{color:var(--teal)}
+::selection{background:rgba(53,196,189,.3)}
+
+/* ---------- nav ---------- */
+nav{
+  position:sticky; top:0; z-index:10;
+  display:flex; align-items:center; gap:.25rem;
+  padding:.65rem clamp(1rem,4vw,2.5rem);
+  background:rgba(11,17,22,.82); backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+  overflow-x:auto; scrollbar-width:none;
+}
+nav::-webkit-scrollbar{display:none}
+.brand{
+  font-family:var(--mono); font-size:.72rem; letter-spacing:.14em;
+  color:var(--amber); white-space:nowrap; margin-right:1rem;
+  text-transform:uppercase;
+}
+.brand b{color:var(--teal); font-weight:600}
+nav button{
+  appearance:none; border:0; background:transparent; color:var(--muted);
+  font-family:var(--mono); font-size:.72rem; letter-spacing:.09em;
+  text-transform:uppercase; padding:.5rem .8rem; border-radius:2px;
+  cursor:pointer; white-space:nowrap; border-bottom:2px solid transparent;
+}
+nav button:hover{color:var(--ivory)}
+nav button:focus-visible{outline:2px solid var(--teal); outline-offset:2px}
+nav button[aria-current="true"]{color:var(--teal); border-bottom-color:var(--teal)}
+
+/* ---------- screens ---------- */
+.screen{display:none; padding:clamp(2rem,6vw,4.5rem) clamp(1rem,4vw,2.5rem) 5rem; max-width:1080px; margin:0 auto}
+.screen.active{display:block; animation:rise .45s ease both}
+@keyframes rise{from{opacity:0; transform:translateY(14px)} to{opacity:1; transform:none}}
+@media (prefers-reduced-motion:reduce){
+  .screen.active{animation:none}
+  *{transition-duration:.01ms !important; animation-duration:.01ms !important}
+}
+
+.eyebrow{
+  font-family:var(--mono); font-size:.7rem; letter-spacing:.22em;
+  text-transform:uppercase; color:var(--amber); margin:0 0 1rem;
+}
+h1{
+  font-family:var(--disp); font-weight:800; letter-spacing:-.02em;
+  font-size:clamp(2.4rem,6.5vw,4.2rem); line-height:1.04; margin:0 0 1.2rem;
+  text-wrap:balance;
+}
+h1 .to{color:var(--teal)}
+h2{
+  font-family:var(--disp); font-weight:750; letter-spacing:-.015em;
+  font-size:clamp(1.5rem,3.4vw,2.1rem); line-height:1.15; margin:0 0 .75rem; text-wrap:balance;
+}
+h3{font-family:var(--disp); font-weight:700; font-size:1.05rem; margin:0 0 .35rem; letter-spacing:-.01em}
+.lede{color:var(--muted); max-width:38rem; font-size:1.06rem; margin:0 0 2.2rem}
+.thesis{
+  border-left:2px solid var(--teal); padding:.35rem 0 .35rem 1.1rem;
+  color:var(--ivory); font-size:1.12rem; max-width:36rem; margin:2.4rem 0;
+}
+.thesis em{color:var(--amber); font-style:normal}
+
+/* ---------- cards ---------- */
+.grid{display:grid; gap:1rem}
+.grid.c3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.grid.c2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.card{
+  background:linear-gradient(160deg,var(--ink1),var(--ink2));
+  border:1px solid var(--line); border-radius:6px; padding:1.4rem 1.3rem;
+  transition:border-color .2s, transform .2s;
+}
+.card:hover{border-color:var(--line2)}
+.card p{color:var(--muted); font-size:.92rem; margin:.4rem 0 0}
+.card .tag{
+  display:inline-block; font-family:var(--mono); font-size:.66rem;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--teal);
+  background:var(--teal-soft); padding:.2rem .55rem; border-radius:2px; margin-bottom:.8rem;
+}
+.card.clickable{cursor:pointer}
+.card.clickable:hover{transform:translateY(-2px)}
+.card.clickable:focus-visible{outline:2px solid var(--teal); outline-offset:2px}
+
+.stat{
+  font-family:var(--disp); font-weight:800; font-size:2.6rem; line-height:1;
+  color:var(--teal); font-variant-numeric:tabular-nums; letter-spacing:-.02em;
+}
+.stat small{display:block; font-family:var(--mono); font-weight:400; font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin-top:.5rem}
+
+.btn{
+  display:inline-block; font-family:var(--mono); font-size:.75rem; letter-spacing:.12em;
+  text-transform:uppercase; text-decoration:none; cursor:pointer;
+  color:var(--ink0); background:var(--teal); border:1px solid var(--teal);
+  padding:.75rem 1.4rem; border-radius:3px; margin-top:1rem;
+}
+.btn:hover{background:#4bd6cf}
+.btn.ghost{background:transparent; color:var(--teal)}
+.btn.ghost:hover{background:var(--teal-soft)}
+.btn:focus-visible{outline:2px solid var(--amber); outline-offset:2px}
+
+/* ---------- timeline ---------- */
+.timeline{border-left:1px solid var(--line2); margin:2rem 0 0 .4rem; padding-left:1.6rem; display:flex; flex-direction:column; gap:1.8rem}
+.tl{position:relative}
+.tl::before{
+  content:""; position:absolute; left:-2.05rem; top:.4rem; width:.8rem; height:.8rem;
+  border-radius:50%; background:var(--ink0); border:2px solid var(--teal);
+}
+.tl.amber::before{border-color:var(--amber)}
+.tl .when{font-family:var(--mono); font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--amber)}
+.tl p{color:var(--muted); margin:.3rem 0 0; max-width:34rem; font-size:.95rem}
+
+/* ---------- case studies ---------- */
+.case{border:1px solid var(--line); border-radius:6px; margin-bottom:1rem; background:linear-gradient(160deg,var(--ink1),var(--ink2)); overflow:hidden}
+.case>button{
+  all:unset; display:flex; width:100%; align-items:baseline; gap:1rem;
+  padding:1.2rem 1.3rem; cursor:pointer; box-sizing:border-box;
+}
+.case>button:hover{background:rgba(53,196,189,.04)}
+.case>button:focus-visible{outline:2px solid var(--teal); outline-offset:-2px}
+.case .num{font-family:var(--mono); color:var(--amber); font-size:.75rem; letter-spacing:.1em}
+.case .ttl{font-family:var(--disp); font-weight:700; font-size:1.08rem; flex:1; letter-spacing:-.01em}
+.case .chev{color:var(--dim); transition:transform .25s}
+.case.open .chev{transform:rotate(90deg)}
+.case .body{display:none; padding:0 1.3rem 1.5rem; border-top:1px solid var(--line)}
+.case.open .body{display:block}
+.frame{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:.9rem; margin-top:1.2rem}
+.frame .cell{background:rgba(11,17,22,.5); border:1px solid var(--line); border-radius:4px; padding:.9rem 1rem}
+.frame .cell b{display:block; font-family:var(--mono); font-weight:500; font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; color:var(--teal); margin-bottom:.4rem}
+.frame .cell.proof b{color:var(--coral)}
+.frame .cell p{margin:0; color:var(--muted); font-size:.9rem}
+.frame .cell p strong{color:var(--ivory)}
+
+/* ---------- DRIPS loop ---------- */
+.loop{display:flex; flex-wrap:wrap; gap:.6rem; align-items:stretch; margin:2rem 0}
+.loop .step{
+  flex:1 1 150px; background:linear-gradient(160deg,var(--ink1),var(--ink2));
+  border:1px solid var(--line); border-radius:5px; padding:1.1rem 1rem; position:relative;
+}
+.loop .step.lit{border-color:var(--teal); box-shadow:0 0 24px rgba(53,196,189,.15)}
+.loop .step .k{font-family:var(--disp); font-weight:800; font-size:1.5rem; color:var(--teal); letter-spacing:-.01em}
+.loop .step.lit .k{color:#4bd6cf}
+.loop .step p{font-size:.82rem; color:var(--muted); margin:.4rem 0 0}
+.flow{display:flex; flex-direction:column; gap:.5rem; margin-top:1.6rem}
+.flow .lane{
+  display:flex; align-items:center; gap:.8rem; font-family:var(--mono);
+  font-size:.78rem; color:var(--muted); border:1px dashed var(--line2);
+  border-radius:4px; padding:.7rem 1rem;
+}
+.flow .lane b{color:var(--amber); font-weight:500}
+
+/* ---------- stack ---------- */
+.tool{cursor:pointer}
+.tool .role{font-family:var(--mono); font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; color:var(--amber)}
+.tool .more{display:none; margin-top:.7rem; border-top:1px solid var(--line); padding-top:.7rem}
+.tool.open .more{display:block}
+.tool .more p{font-size:.86rem}
+
+/* ---------- role fit ---------- */
+.roles{display:flex; flex-wrap:wrap; gap:.5rem; margin-bottom:1.8rem}
+.roles button{
+  appearance:none; cursor:pointer; font-family:var(--mono); font-size:.72rem;
+  letter-spacing:.1em; text-transform:uppercase; color:var(--muted);
+  background:transparent; border:1px solid var(--line2); border-radius:99px;
+  padding:.5rem 1rem;
+}
+.roles button:hover{color:var(--ivory)}
+.roles button:focus-visible{outline:2px solid var(--teal); outline-offset:2px}
+.roles button.on{color:var(--ink0); background:var(--amber); border-color:var(--amber)}
+.ev{transition:opacity .25s}
+.ev.off{opacity:.22}
+.ev .why{display:none; font-size:.84rem; color:var(--amber); margin-top:.6rem}
+.ev.hit .why{display:block}
+
+/* ---------- connect ---------- */
+.qr{
+  width:132px; height:132px; border:1px solid var(--line2); border-radius:6px;
+  display:grid; place-items:center; font-family:var(--mono); font-size:.62rem;
+  letter-spacing:.12em; color:var(--dim); text-transform:uppercase; text-align:center;
+  background:repeating-conic-gradient(rgba(125,190,200,.06) 0% 25%, transparent 0% 50%) 0 0/16px 16px;
+}
+.prompts li{color:var(--muted); margin-bottom:.6rem}
+.prompts li::marker{color:var(--teal)}
+footer{
+  border-top:1px solid var(--line); margin-top:2rem; padding:2rem clamp(1rem,4vw,2.5rem);
+  font-family:var(--mono); font-size:.68rem; letter-spacing:.1em; color:var(--dim);
+  text-transform:uppercase; display:flex; justify-content:space-between; flex-wrap:wrap; gap:.5rem;
+}
+.note{font-size:.8rem; color:var(--dim); font-family:var(--mono); letter-spacing:.04em}
+</style>
+
+<nav aria-label="Showcase sections">
+  <span class="brand">Fal Mensah · <b>Proof&nbsp;to&nbsp;Possibility</b></span>
+  <button data-go="home" aria-current="true">Home</button>
+  <button data-go="map">Impact Map</button>
+  <button data-go="cases">Case Studies</button>
+  <button data-go="systems">Systems</button>
+  <button data-go="stack">AI Stack</button>
+  <button data-go="fit">Role Fit</button>
+  <button data-go="connect">Connect</button>
+</nav>
+
+<main>
+
+<!-- ============ HOME ============ -->
+<section class="screen active" id="home">
+  <p class="eyebrow">An AI-native showcase of systems, outcomes & reusable learning</p>
+  <h1>Proof <span class="to">to</span> Possibility</h1>
+  <p class="lede">Three years of learning and growing at Lilly — shared not as a look back, but as an invitation. These are the tools, operating models, and outcomes behind the work, for any individual or team who could benefit from them.</p>
+  <p class="note" style="margin:-1.4rem 0 2rem">Superpower: turning skills into systems people can actually use. Sidekicks: an army of agents. They don't rescue her — she writes their mission briefs.</p>
+
+  <div class="grid c3">
+    <div class="card clickable" role="button" tabindex="0" data-go="cases" data-case="0">
+      <span class="tag">Continuous Improvement</span>
+      <h3>The DRIPS Operating Loop</h3>
+      <p>A repeatable CI model for WCS: Detect → Root&nbsp;cause → Improve → Prove → Share — with evidence at every step.</p>
+    </div>
+    <div class="card clickable" role="button" tabindex="0" data-go="cases" data-case="1">
+      <span class="tag">Operations Design</span>
+      <h3>Front-Door Operations</h3>
+      <p>A clearer path from incoming need to owned execution — visible routing, decision points, and handoffs.</p>
+    </div>
+    <div class="card clickable" role="button" tabindex="0" data-go="cases" data-case="2">
+      <span class="tag">AI Enablement</span>
+      <h3>AI Learning Lab</h3>
+      <p>From individual experimentation to intentional orchestration — the right tool, the right context, the right outcome.</p>
+    </div>
+  </div>
+
+  <p class="thesis">Fal turns complex work into <em>practical systems</em>, <em>visible outcomes</em>, and <em>reusable learning</em>.</p>
+  <button class="btn" data-go="map">Enter the showcase</button>
+  <button class="btn ghost" data-go="connect">Skip to connect</button>
+</section>
+
+<!-- ============ IMPACT MAP ============ -->
+<section class="screen" id="map">
+  <p class="eyebrow">Screen 02 · Capability evolution</p>
+  <h2>Not a job history. A capability map.</h2>
+  <p class="lede">The path in came through an apprenticeship, not a traditional technology degree — and that turned out to be the differentiator, not the deficit. Each stage below built the one after it.</p>
+
+  <div class="timeline">
+    <div class="tl"><span class="when">Stage 1 · The unfamiliar doorway</span>
+      <h3>Social work → technology</h3>
+      <p>Entered enterprise technology through an apprenticeship after years in social work — carrying a people-first fluency in needs, barriers, systems, and change that no bootcamp teaches. Backed it with a Google Project Management certificate, where the capstone told exactly this pivot story.</p></div>
+    <div class="tl"><span class="when">Stage 2 · Momentum</span>
+      <h3>Delivery</h3>
+      <p>Learned the language, tools, and delivery practices of a global digital-workplace organization supporting 20+ delivery teams.</p></div>
+    <div class="tl amber"><span class="when">Stage 3 · Building the machine</span>
+      <h3>Operating-model creation</h3>
+      <p>Designed the front-door and execution model connecting people, process, and tooling — Teams front door → Jira execution → SharePoint proof.</p></div>
+    <div class="tl amber"><span class="when">Stage 4 · Proof</span>
+      <h3>Continuous improvement, operationalized</h3>
+      <p>Turned CI from good intentions into a visible loop (DRIPS) with a flagship result: an audit run targeted at 100 that completed 244.</p></div>
+    <div class="tl"><span class="when">Stage 5 · Amplification</span>
+      <h3>AI-enabled building</h3>
+      <p>Moved beyond “using chatbots” to orchestrating a full stack — enterprise Copilot, Claude, agent tooling, and governed pathways.</p></div>
+    <div class="tl"><span class="when">Stage 6 · The return</span>
+      <h3>Reusable systems for others</h3>
+      <p>Everything above packaged as maps other people can follow: runbooks, operating models, and this showcase itself.</p></div>
+  </div>
+</section>
+
+<!-- ============ CASE STUDIES ============ -->
+<section class="screen" id="cases">
+  <p class="eyebrow">Screen 03 · Evidence, structured the same way every time</p>
+  <h2>Three initiatives. One framework.</h2>
+  <p class="lede">Context → Need → Role → System → Evidence → Reuse. If it can't answer all six, it isn't in the showcase.</p>
+
+  <div class="case open" id="case0">
+    <button aria-expanded="true"><span class="num">01</span><span class="ttl">WCS Continuous Improvement — the DRIPS loop</span><span class="chev">▸</span></button>
+    <div class="body">
+      <div class="frame">
+        <div class="cell"><b>Context</b><p>Improvement work existed across WCS, but discovery, execution evidence, ownership, and reuse were not consistently connected.</p></div>
+        <div class="cell"><b>Need</b><p>A way to make improvement visible, repeatable, and provable — without adding another standing meeting.</p></div>
+        <div class="cell"><b>Role</b><p>Designed and operationalized the WCS-wide CI operating model, end to end.</p></div>
+        <div class="cell"><b>System</b><p>DRIPS: <strong>Detect → Root cause → Improve → Prove → Share</strong>, running on Teams front door → Jira execution → SharePoint proof.</p></div>
+        <div class="cell proof"><b>Evidence</b><p>Meeting Room Tech audit: target of <strong>100 rooms</strong> in the run — <strong>244 completed</strong>, with a runbook and supporting evidence produced along the way.</p></div>
+        <div class="cell"><b>Reuse</b><p>A model any WCS team can understand, adopt, and continue — the loop is the deliverable, not the meeting.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="case" id="case1">
+    <button aria-expanded="false"><span class="num">02</span><span class="ttl">Front-Door Operations — from incoming need to owned execution</span><span class="chev">▸</span></button>
+    <div class="body">
+      <div class="frame">
+        <div class="cell"><b>Context</b><p>Requests arrived from every direction; routing, ownership, and status lived in people's heads.</p></div>
+        <div class="cell"><b>Need</b><p>One clear path in, with decision points and visible handoffs — a service blueprint, not a paragraph-filled process chart.</p></div>
+        <div class="cell"><b>Role</b><p>Built the categorization, routing, and ownership model for incoming work.</p></div>
+        <div class="cell"><b>System</b><p>People and teams → front door → decision logic → work execution → proof → learning and reuse.</p></div>
+        <div class="cell proof"><b>Evidence</b><p>Leaders and delivery teams could finally <strong>see the pipeline</strong>: what came in, who owned it, and where it stood.</p></div>
+        <div class="cell"><b>Reuse</b><p>The blueprint transfers to any team drowning in untracked intake.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="case" id="case2">
+    <button aria-expanded="false"><span class="num">03</span><span class="ttl">AI Learning Lab — from experimentation to orchestration</span><span class="chev">▸</span></button>
+    <div class="body">
+      <div class="frame">
+        <div class="cell"><b>Context</b><p>New AI features and tools ship daily; most people either freeze or try everything at once.</p></div>
+        <div class="cell"><b>Need</b><p>Judgment about which tool belongs where, what information it should receive, and what outcome it should produce.</p></div>
+        <div class="cell"><b>Role</b><p>Built and runs a personal-plus-enterprise lab spanning governed internal platforms and a full external creation stack.</p></div>
+        <div class="cell"><b>System</b><p>Each tool holds <strong>one clear job</strong> in a production pipeline — evidence → narrative → experience → avatar → final assembly.</p></div>
+        <div class="cell proof"><b>Evidence</b><p>This showcase <strong>is</strong> the evidence: an AI-native production workflow, delivered as working software.</p></div>
+        <div class="cell"><b>Reuse</b><p>The tool-role map (next screen) is a starter kit for anyone facing feature overload.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SYSTEMS ============ -->
+<section class="screen" id="systems">
+  <p class="eyebrow">Screen 04 · Operating systems for work</p>
+  <h2>The DRIPS loop</h2>
+  <p class="lede">More than project coordination — this is designing how work moves. Watch the loop run.</p>
+
+  <div class="loop" id="drips" aria-label="DRIPS cycle: Detect, Root cause, Improve, Prove, Share">
+    <div class="step"><span class="k">D</span><h3>Detect</h3><p>Signals surface through the front door — nothing depends on hallway luck.</p></div>
+    <div class="step"><span class="k">R</span><h3>Root cause</h3><p>Ask why before fixing what. The problem behind the symptom.</p></div>
+    <div class="step"><span class="k">I</span><h3>Improve</h3><p>Execute in Jira with a named owner and a visible state.</p></div>
+    <div class="step"><span class="k">P</span><h3>Prove</h3><p>Evidence lands in SharePoint — runbooks, before/after, numbers.</p></div>
+    <div class="step"><span class="k">S</span><h3>Share</h3><p>Learning becomes reusable. The loop feeds the next detection.</p></div>
+  </div>
+
+  <div class="flow">
+    <div class="lane"><b>INTAKE</b> People &amp; teams → Teams front door → categorized &amp; routed</div>
+    <div class="lane"><b>EXECUTE</b> Decision logic → Jira work items → named ownership → visible status</div>
+    <div class="lane"><b>PROVE</b> SharePoint evidence → runbooks → metrics → reusable learning</div>
+  </div>
+
+  <p class="note">No new meetings were created in the making of this operating model.</p>
+</section>
+
+<!-- ============ AI STACK ============ -->
+<section class="screen" id="stack">
+  <p class="eyebrow">Screen 05 · One clear job per tool</p>
+  <h2>Orchestration, not subscription.</h2>
+  <p class="lede">The point isn't owning tools — it's knowing which one belongs where, what it should be given, and what it should produce. Tap a card.</p>
+
+  <div class="grid c3">
+    <div class="card tool" tabindex="0"><span class="role">Enterprise context</span><h3>Microsoft Copilot</h3><p>Productivity inside M365 — where the work and the data already live.</p>
+      <div class="more"><p>Meeting prep, summaries, drafts grounded in enterprise content. First stop for anything touching internal information.</p></div></div>
+    <div class="card tool" tabindex="0"><span class="role">Deep reasoning</span><h3>Claude</h3><p>Long-form thinking, narrative, artifacts, and working software — including this page.</p>
+      <div class="more"><p>Case-study writing, scripts, technical drafting, and building the interactive experience itself via Claude Enterprise.</p></div></div>
+    <div class="card tool" tabindex="0"><span class="role">Governed agents</span><h3>Agent platform</h3><p>Enterprise agent building — prompts, toolkits, and data wired into governed multi-agent workflows.</p>
+      <div class="more"><p>Where experimentation graduates into registered, governed capability. The pathway most colleagues haven't discovered yet.</p></div></div>
+    <div class="card tool" tabindex="0"><span class="role">Custom copilots</span><h3>Copilot Studio</h3><p>Building custom copilots and automations on the M365 license the whole org already has.</p>
+      <div class="more"><p>The proof that "we already own this" — capability sitting in the enterprise stack, waiting for someone to show what it can do.</p></div></div>
+    <div class="card tool" tabindex="0"><span class="role">Grounded synthesis</span><h3>NotebookLM</h3><p>Source-grounded learning — keeps the story tied to real documents, not invention.</p>
+      <div class="more"><p>Blueprint synthesis from curated, sanitized sources only.</p></div></div>
+    <div class="card tool" tabindex="0"><span class="role">Presence at scale</span><h3>Synthesia</h3><p>Digital Fal — avatar opening, section bridges, and the closing invitation. Nothing more.</p>
+      <div class="more"><p>Used sparingly so the avatar stays impressive instead of gimmicky. The middle of the showcase is real work, not monologue.</p></div></div>
+    <div class="card tool" tabindex="0"><span class="role">Visual production</span><h3>Canva + Figma</h3><p>Identity, motion, video assembly, and clickable prototypes.</p>
+      <div class="more"><p>Canva for final polish and exports; Figma for wireframes and interactive walkthroughs when a deck isn't enough.</p></div></div>
+  </div>
+
+  <p class="thesis">The production pipeline: evidence → narrative → experience → avatar scenes → final assembly. <em>The workflow itself is portfolio evidence.</em></p>
+</section>
+
+<!-- ============ ROLE FIT ============ -->
+<section class="screen" id="fit">
+  <p class="eyebrow">Screen 06 · Where this capability lands</p>
+  <h2>Pick a role. Watch the evidence line up.</h2>
+  <p class="lede">Every claim below is backed by a case study on Screen 03.</p>
+
+  <div class="roles" role="group" aria-label="Role filters">
+    <button data-role="prodops">Product Operations</button>
+    <button data-role="tbi">Technical Business Integration</button>
+    <button data-role="ai">AI Enablement</button>
+    <button data-role="pm">Program Leadership</button>
+    <button data-role="ci">Continuous Improvement</button>
+    <button data-role="adopt">Adoption &amp; Change</button>
+  </div>
+
+  <div class="grid c2">
+    <div class="card ev" data-fits="prodops tbi ci pm"><span class="tag">DRIPS</span><h3>Operating-model design</h3><p>Built and ran a CI loop across an entire org unit, with tooling and evidence built in.</p><p class="why" data-why></p></div>
+    <div class="card ev" data-fits="prodops pm tbi"><span class="tag">Front door</span><h3>Intake &amp; execution clarity</h3><p>Turned scattered requests into routed, owned, visible work.</p><p class="why" data-why></p></div>
+    <div class="card ev" data-fits="ci pm"><span class="tag">MRTS</span><h3>Delivery beyond target</h3><p>244 completed against a target of 100, with a runbook others can follow.</p><p class="why" data-why></p></div>
+    <div class="card ev" data-fits="ai adopt"><span class="tag">AI Lab</span><h3>Tool orchestration &amp; judgment</h3><p>A working map of which AI capability fits which job — governed pathways included.</p><p class="why" data-why></p></div>
+    <div class="card ev" data-fits="ai adopt tbi"><span class="tag">This showcase</span><h3>AI-native production</h3><p>Concept to working interactive experience using the enterprise + creation stack.</p><p class="why" data-why></p></div>
+    <div class="card ev" data-fits="adopt ci ai"><span class="tag">Translation</span><h3>Human-first enablement</h3><p>A nontraditional path in means fluency in the language of people who feel locked out of technology.</p><p class="why" data-why></p></div>
+  </div>
+</section>
+
+<!-- ============ CONNECT ============ -->
+<section class="screen" id="connect">
+  <p class="eyebrow">Screen 07 · The invitation</p>
+  <h2>What could we build next?</h2>
+  <p class="lede">The common thread across this work is turning scattered needs into practical systems, visible evidence, and reusable learning. If one of these approaches could benefit your team, let's explore it together.</p>
+
+  <div class="grid c2">
+    <div class="card">
+      <h3>Discussion starters</h3>
+      <ul class="prompts">
+        <li>Which part of your team's work is hardest to see right now?</li>
+        <li>Where does improvement happen but never get captured or reused?</li>
+        <li>Which AI capability have you been curious about but haven't had a guide for?</li>
+        <li>What would a front door look like for your intake?</li>
+      </ul>
+    </div>
+    <div class="card" style="display:flex; gap:1.2rem; align-items:center; flex-wrap:wrap">
+      <div class="qr">QR<br>portfolio<br>link here</div>
+      <div>
+        <h3>Continue the conversation</h3>
+        <p>Portfolio · Résumé · LinkedIn<br>Internal hub link for Lilly colleagues</p>
+        <a class="btn ghost" href="#" onclick="return false">LinkedIn — add link</a>
+      </div>
+    </div>
+  </div>
+
+  <p class="thesis">These examples reflect what has already been built — but they point toward <em>what's possible next</em>.</p>
+</section>
+
+</main>
+
+<footer>
+  <span>Proof to Possibility · Draft v1 · Internal edition</span>
+  <span>Built with the stack it describes</span>
+</footer>
+
+<script>
+(function(){
+  var screens = document.querySelectorAll('.screen');
+  var tabs = document.querySelectorAll('nav button');
+  function go(id){
+    screens.forEach(function(s){ s.classList.toggle('active', s.id===id); });
+    tabs.forEach(function(t){
+      var cur = t.dataset.go===id;
+      if(cur){ t.setAttribute('aria-current','true'); } else { t.removeAttribute('aria-current'); }
+    });
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+  document.addEventListener('click', function(e){
+    var el = e.target.closest('[data-go]');
+    if(!el) return;
+    go(el.dataset.go);
+    if(el.dataset.case!==undefined){ openCase(+el.dataset.case); }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key!=='Enter' && e.key!==' ') return;
+    var el = e.target.closest('.card.clickable, .card.tool');
+    if(!el) return;
+    e.preventDefault();
+    el.click();
+  });
+
+  // case accordions
+  var cases = document.querySelectorAll('.case');
+  function openCase(i){
+    cases.forEach(function(c,j){
+      var open = i===j;
+      c.classList.toggle('open', open);
+      c.querySelector('button').setAttribute('aria-expanded', open);
+    });
+  }
+  cases.forEach(function(c,i){
+    c.querySelector('button').addEventListener('click', function(){
+      var isOpen = c.classList.contains('open');
+      openCase(isOpen ? -1 : i);
+    });
+  });
+
+  // tool cards
+  document.querySelectorAll('.tool').forEach(function(t){
+    t.addEventListener('click', function(){ t.classList.toggle('open'); });
+  });
+
+  // role fit
+  var roleBtns = document.querySelectorAll('.roles button');
+  var whyText = {
+    prodops:'Fits Product Operations: systems thinking applied to how work actually moves.',
+    tbi:'Fits Technical Business Integration: translating between business need and technical execution.',
+    ai:'Fits AI Enablement: hands-on judgment across the governed and creative stack.',
+    pm:'Fits Program Leadership: ownership, visibility, and delivery beyond target.',
+    ci:'Fits Continuous Improvement: a proven, repeatable loop with evidence.',
+    adopt:'Fits Adoption & Change: human-first translation for people new to the tools.'
+  };
+  roleBtns.forEach(function(b){
+    b.addEventListener('click', function(){
+      var on = b.classList.contains('on');
+      roleBtns.forEach(function(x){ x.classList.remove('on'); });
+      document.querySelectorAll('.ev').forEach(function(ev){
+        ev.classList.remove('off','hit');
+        ev.querySelector('[data-why]').textContent='';
+      });
+      if(on) return;
+      b.classList.add('on');
+      var r = b.dataset.role;
+      document.querySelectorAll('.ev').forEach(function(ev){
+        var fits = ev.dataset.fits.split(' ').indexOf(r) !== -1;
+        ev.classList.toggle('off', !fits);
+        ev.classList.toggle('hit', fits);
+        if(fits){ ev.querySelector('[data-why]').textContent = whyText[r]; }
+      });
+    });
+  });
+
+  // DRIPS loop animation
+  var steps = document.querySelectorAll('#drips .step');
+  var idx = 0;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(steps.length && !reduce){
+    setInterval(function(){
+      steps.forEach(function(s){ s.classList.remove('lit'); });
+      steps[idx % steps.length].classList.add('lit');
+      idx++;
+    }, 1600);
+  }
+})();
+</script>

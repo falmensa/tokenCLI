@@ -1,0 +1,200 @@
+<title>Proof to Possibility — Executive Concept Brief</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --bg-dark: #0B1116;
+    --card-bg: #16232C;
+    --card-border: rgba(125,190,200,0.2);
+    --teal: #35C4BD;
+    --amber: #E8A25C;
+    --text-light: #F2EDE4;
+    --text-muted: #9AAAB2;
+    --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --font-mono: ui-monospace, 'Cascadia Code', monospace;
+  }
+  body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: var(--font-main);
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+  .canvas-container {
+    max-width: 960px;
+    width: 100%;
+    background: linear-gradient(180deg, #101A21 0%, #0B1116 100%);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  }
+  header {
+    border-bottom: 1px solid var(--card-border);
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .title-area h1 {
+    font-size: 2.2rem;
+    margin: 0 0 0.5rem 0;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .title-area h1 span { color: var(--teal); }
+  .subtitle {
+    color: var(--amber);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin: 0;
+  }
+  .badge {
+    background: rgba(53,196,189,0.1);
+    color: var(--teal);
+    border: 1px solid var(--teal);
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
+  .grid-2x2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+  .card h2 {
+    font-size: 1.1rem;
+    color: var(--amber);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid rgba(232,162,92,0.2);
+    padding-bottom: 0.5rem;
+  }
+  ul {
+    margin: 0;
+    padding-left: 1.2rem;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+  ul li { margin-bottom: 0.6rem; }
+  ul li strong { color: var(--text-light); }
+  .highlight-box {
+    background: rgba(53,196,189,0.05);
+    border-left: 3px solid var(--teal);
+    padding: 0.8rem 1rem;
+    margin-top: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+  .highlight-box .quote {
+    font-style: italic;
+    font-size: 0.88rem;
+    color: var(--text-light);
+  }
+  .stat-callout {
+    background: rgba(53,196,189,0.05);
+    border-left: 3px solid var(--teal);
+    padding: 0.8rem 1rem;
+    margin-top: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+  .stat-callout .number {
+    font-family: var(--font-mono);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--teal);
+  }
+  .stat-callout .label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+  footer {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--card-border);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+</style>
+
+<div class="canvas-container">
+  <header>
+    <div class="title-area">
+      <p class="subtitle">Strategic Concept Brief &amp; Architecture Overview</p>
+      <h1>Proof <span>to</span> Possibility</h1>
+    </div>
+    <div class="badge">Executive Briefing</div>
+  </header>
+
+  <div class="grid-2x2">
+    <div class="card">
+      <h2>01. Strategic Core</h2>
+      <ul>
+        <li><strong>Interactive Command Center:</strong> Replacing static slide decks with an interactive capability showcase of operational systems and AI enablement.</li>
+        <li><strong>The Strategic Bridge:</strong> <em>"Proof is the systems delivered; Possibility is the organizational scale achieved when teams adopt these tools."</em></li>
+        <li><strong>Human-Centered Tech Leadership:</strong> Translating non-traditional perspectives into a distinct edge for change management, user enablement, and system adoption.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>02. Operational Systems &amp; CI</h2>
+      <ul>
+        <li><strong>The DRIPS Loop:</strong> Designed and operationalized a 5-stage Continuous Improvement loop (Detect, Root Cause, Improve, Prove, Share) active across 21 product teams.</li>
+        <li><strong>Front-Door Operations:</strong> Built unified intake and routing connecting Teams, Jira, and SharePoint for total execution visibility.</li>
+        <li><strong>Reusable Playbooks:</strong> Establishing standardized runbooks and governance logs so organizational wins become permanent capabilities.</li>
+      </ul>
+      <div class="stat-callout">
+        <div class="number">94.2% PASS</div>
+        <div class="label">Windows MTR fleet compliance baseline · 1,417 of 1,505 units · 2,721 devices audited (Sprint 70)</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>03. AI Ecosystem Orchestration</h2>
+      <ul>
+        <li><strong>Lilly Cortex Integration:</strong> Visual multi-agent builder workflows leveraging Claude 4 Sonnet, ServiceNow toolkits, and structured prompts.</li>
+        <li><strong>Core M365 Ecosystem:</strong> Maximizing enterprise investments through Copilot M365, SharePoint Hubs, and custom Copilot Studio agents.</li>
+        <li><strong>Responsible Governance:</strong> Practical human-in-the-loop workflows aligning rapid innovation with strict enterprise compliance and security standards.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>04. Showcase Artifacts</h2>
+      <ul>
+        <li><strong>Standalone Interactive Showcase:</strong> A zero-dependency HTML experience functioning as living proof of AI-native production capabilities.</li>
+        <li><strong>Role-Fit Alignment Matrix:</strong> Dynamic evidence mapping tailored for Technical Business Integration, AI Enablement, and Product Operations leaders.</li>
+        <li><strong>Adoption Framework:</strong> Actionable discussion starters designed to invite peer teams into guided AI and process experimentation.</li>
+      </ul>
+      <div class="highlight-box">
+        <div class="quote">"Orchestration over subscription — turning tools into practical systems people actually use."</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>Fal Mensah · Technical Business Integration</span>
+    <span>Digital Core · Workforce Collaboration Services</span>
+  </footer>
+</div>

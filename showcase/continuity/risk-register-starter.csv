@@ -1,0 +1,5 @@
+RiskID,Description,PIPlanningDuty,Impact,Status,Owner,JiraLink,LastVerified
+BCP-001,"CI operating model, front-door routing, and hub architecture have a single named owner on a fixed-duration assignment ending 2026-08-15. Mitigation options: (a) convert role to FTE; (b) extend and name successor with 4-week shadow; (c) accept orphaning and archive hub read-only.",Continuity of CI operating model,High,Decision Required,Fal Mensah,,2026-07-30
+CI-001,"[YOUR RISK] Replace with a real open item from the existing CI risk register",[Matching PI-planning duty],High,Open,[Owner],,2026-07-30
+CI-002,"[YOUR RISK] Replace with a real in-progress item",[Matching PI-planning duty],Medium,In Progress,[Owner],,2026-07-30
+CI-003,"[YOUR RISK] Replace with a real mitigated item — closed wins belong on the chart too",[Matching PI-planning duty],Medium,Mitigated,[Owner],,2026-07-30

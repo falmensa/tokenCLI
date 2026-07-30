@@ -75,15 +75,52 @@ Walk every page as a stranger. Fix titles, broken web parts, nav order. Set site
 
 ---
 
-## THURSDAY — polish (3 hours)
+## THURSDAY — polish (4–5 hours, in this exact order)
 
-1. **The one real flow (first, while fresh):** Power Automate → Automated cloud flow →
-   trigger **"When an item is created or modified (SharePoint)"** → site + register →
-   Condition: `Impact = High AND Status = Open` → action **"Post card in a chat or channel (Teams)"** →
-   WCS channel → card: Risk title, Owner, link to item. Test by creating a dummy High risk; delete it after the ping lands.
-2. Upload any runbooks not done yesterday; add LastVerified dates.
-3. Convert Owner column to Person type if time allows.
-4. Dry-run the 10-minute walkthrough (script below) once, out loud.
+### 1. The guaranteed flow first (60 min — this is the live demo, protect it)
+Power Automate → Automated cloud flow → trigger **"When an item is created or modified
+(SharePoint)"** → site + register → Condition: `Impact = High AND Status = Open` →
+action **"Post card in a chat or channel (Teams)"** → WCS channel → card: Risk title,
+Owner, link to item. Test with a dummy High risk; delete it after the ping lands.
+**Do not start task 2 until this works.** Standard connectors only — nothing can block it.
+
+### 2. Power BI dashboard (90 min, since you have access)
+1. Power BI Desktop → **Get Data → SharePoint Online List** → paste the site URL
+   (site root, not the list URL) → select the risk register → Load.
+2. Build exactly three visuals, no more:
+   - **Donut:** risks by Status (Open / In Progress / Mitigated / Decision Required)
+   - **Bar:** risks by Impact, colored by Status
+   - **Card:** count of Status = "Decision Required" — titled **"Decisions needed"**
+     (this is BCP-001 staring at leadership from the dashboard)
+3. Theme the visuals: background `#0B1116`, text `#F2EDE4`, accents `#35C4BD` / `#E8A25C`
+   — the dashboard matches the Proof to Possibility world.
+4. Publish → your workspace → SharePoint Home page → replace the Quick Chart web part
+   with the **Power BI web part** → paste report link.
+**Safety rule:** build the Quick Chart today regardless. It stays until the Power BI
+embed renders for a colleague who isn't you (license/permission check). Never delete
+the fallback before the upgrade is verified.
+
+### 3. Jira → register sync: ONE timeboxed attempt (45 min hard stop)
+The goal from the Google notes: Jira issue updated → register row updates automatically.
+- Attempt: Power Automate → new flow → search connector **"Jira"** → trigger
+  **"When an issue is updated"** (needs your Jira Cloud site URL + an API token from
+  your Atlassian account settings) → action **"Update item (SharePoint)"** mapped by RiskID.
+- **If you hit any of these, stop immediately and ship it as DESIGNED:** the Jira
+  connector is marked Premium and blocked by policy · admin consent screen appears ·
+  token auth loops. That wall is a tenant-governance decision, not a skills gap —
+  45 minutes of fighting it buys you nothing by Friday.
+- Either way, the Roadmap page already documents the architecture. If it works: move it
+  to LIVE and you have TWO live automations. If not: it's your Phase 2 headline, and the
+  ask for connector enablement becomes part of the conversion conversation — "the
+  design is done; unblocking it needs someone with tenure past August 15."
+
+### 4. Content pass (60 min)
+Upload remaining runbooks; add LastVerified dates; convert Owner column to Person type
+if time allows.
+
+### 5. Dry run (30 min)
+Walk the 10-minute script below once, out loud, clicking everything — including one
+live dummy-risk → Teams ping.
 
 ## FRIDAY — into mentors' hands
 
@@ -95,8 +132,9 @@ Teams message to Ian + James:
 
 ---
 
-## Scope discipline (what is CUT from this week)
-- Power BI — Quick Chart covers it. Revisit only if someone asks.
-- Copilot Studio agent — Roadmap page only. Do not attempt a build before Friday.
-- Video/Synthesia/comic art — resumes after Aug 8.
-- Person-column lookups, fancy formatting, custom SPFx — no.
+## Scope discipline (what is IN and what is CUT this week)
+- **IN:** Power BI dashboard (Thursday, 90 min, Quick Chart kept as fallback until embed verified).
+- **IN (timeboxed):** Jira → Power Automate sync — one 45-minute attempt Thursday, hard stop, ships as DESIGNED if blocked.
+- CUT: Copilot Studio agent — Roadmap page only. Do not attempt a build before Friday.
+- CUT: Video/Synthesia/comic art — resumes after Aug 8.
+- CUT: fancy formatting, custom SPFx, anything requiring admin tickets — no.

@@ -1,0 +1,130 @@
+<title>WCS CI Sustainment & Continuity — Executive Brief</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    --ink:#16232C; --mut:#5B6B72; --line:#D8DDD9;
+    --teal:#0E7C76; --amber:#B26B24; --paper:#FFFFFF; --tint:#F4F6F5;
+    --mono:ui-monospace,"Cascadia Code",monospace;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:#E9ECEA; color:var(--ink);
+    font-family:"Segoe UI",system-ui,-apple-system,sans-serif;
+    padding:2rem 1rem; line-height:1.55;
+  }
+  .sheet{
+    max-width:860px; margin:0 auto; background:var(--paper);
+    padding:3rem 3.2rem; box-shadow:0 8px 30px rgba(22,35,44,.12);
+  }
+  header{border-bottom:3px solid var(--ink); padding-bottom:1.2rem; margin-bottom:1.8rem}
+  .eyebrow{
+    font-family:var(--mono); font-size:.7rem; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--amber); margin:0 0 .5rem;
+  }
+  h1{font-size:1.9rem; font-weight:800; letter-spacing:-.015em; margin:0 0 .4rem; text-wrap:balance}
+  .meta{font-family:var(--mono); font-size:.72rem; color:var(--mut); letter-spacing:.06em}
+
+  .core{
+    border-left:3px solid var(--teal); padding:.2rem 0 .2rem 1.1rem;
+    font-size:1.02rem; margin:0 0 2rem; color:var(--ink);
+  }
+
+  h2{
+    font-size:.78rem; font-family:var(--mono); letter-spacing:.18em; text-transform:uppercase;
+    color:var(--teal); margin:2rem 0 .8rem;
+  }
+
+  .blocks{display:grid; gap:.8rem}
+  .block{
+    display:grid; grid-template-columns:190px 1fr; gap:1rem;
+    border:1px solid var(--line); padding:1rem 1.2rem; align-items:start;
+  }
+  .block b{font-size:.95rem}
+  .block p{margin:0; color:var(--mut); font-size:.92rem}
+  .block .tag{
+    display:inline-block; font-family:var(--mono); font-size:.6rem; letter-spacing:.12em;
+    text-transform:uppercase; padding:.15rem .5rem; margin-left:.5rem; vertical-align:middle;
+  }
+  .tag.live{background:#E3F2EF; color:var(--teal)}
+  .tag.designed{background:#F7EEE2; color:var(--amber)}
+
+  table{width:100%; border-collapse:collapse; font-size:.92rem}
+  th{
+    text-align:left; font-family:var(--mono); font-size:.66rem; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--mut); border-bottom:2px solid var(--ink);
+    padding:.4rem .6rem .4rem 0;
+  }
+  td{border-bottom:1px solid var(--line); padding:.55rem .6rem .55rem 0; vertical-align:top}
+  td:first-child{font-weight:700; white-space:nowrap}
+  .decisions td:first-child{color:var(--teal)}
+
+  .note{
+    background:var(--tint); padding:.9rem 1.1rem; font-size:.88rem; color:var(--mut);
+    margin-top:2rem;
+  }
+  footer{
+    margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:.5rem;
+    font-family:var(--mono); font-size:.68rem; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--mut);
+  }
+  @media (max-width:640px){ .sheet{padding:1.8rem 1.4rem} .block{grid-template-columns:1fr} }
+  @media print{
+    body{background:#fff; padding:0} .sheet{box-shadow:none; max-width:none; padding:1.2in .9in}
+  }
+</style>
+
+<div class="sheet">
+  <header>
+    <p class="eyebrow">Executive Brief · One Page</p>
+    <h1>WCS CI Sustainment &amp; Continuity</h1>
+    <p class="meta">Fal Mensah · Technical Business Integration · Digital Core / Workforce Collaboration Services · July 2026</p>
+  </header>
+
+  <p class="core">I build the connective tissue between operational work, governance, evidence, and leadership decisions. My approach uses Jira to execute, SharePoint to retain and scale knowledge, Teams to coordinate, and AI to accelerate synthesis and drafting under human ownership.</p>
+
+  <h2>The system, in four blocks</h2>
+  <div class="blocks">
+    <div class="block">
+      <b>1 · Operational signal<span class="tag live">Live</span></b>
+      <p>MRT baseline established: 2,721 devices categorized across the WCS fleet. Windows evidence: 1,417 PASS · 88 FAIL, with DATA-MISSING syncs separated from true failures so the numbers are audit-grade. Room audit delivered 244 against a target of 100.</p>
+    </div>
+    <div class="block">
+      <b>2 · Execution system<span class="tag live">Live</span></b>
+      <p>Jira tracks action. SharePoint retains evidence and runbooks. Teams coordinates. AI accelerates drafting and synthesis under human review. Each platform holds one deliberate role — no duplicate process, no new standing meetings.</p>
+    </div>
+    <div class="block">
+      <b>3 · Sustainment control<span class="tag designed">Designed</span></b>
+      <p>Ownership assignments, evidence standards, continuity risks, handoff plans, and published learning — the layer that prevents a delivered improvement from fading into a one-time pilot. Designed to scale across the 21-team WCS footprint.</p>
+    </div>
+    <div class="block">
+      <b>4 · Leadership decision surface</b>
+      <p>Risks and open decisions surfaced as data on the register, each with an owner, impact rating, and decision date — so leadership choices are explicit rather than discovered after the fact.</p>
+    </div>
+  </div>
+
+  <h2>Three decisions requested</h2>
+  <table class="decisions">
+    <tr><th>Decision</th><th>Why it matters</th></tr>
+    <tr><td>Sustainment owner</td><td>The operating model, register, and runbooks need one accountable owner beyond the current fixed-duration assignment (ends 2026-08-15 — see register item BCP-001).</td></tr>
+    <tr><td>Evidence standard</td><td>The minimum proof required to close a CI item, so "done" means verifiable — the standard the MRT pattern already demonstrates.</td></tr>
+    <tr><td>Review cadence</td><td>A monthly review rhythm that keeps the register live and the learning reusable, without adding a standing meeting burden.</td></tr>
+  </table>
+
+  <h2>What lands with this brief</h2>
+  <table>
+    <tr><th>Item</th><th>Format</th></tr>
+    <tr><td>Sustainment &amp; Continuity hub</td><td>SharePoint site — register, runbooks, handoff plan, roadmap (labeled LIVE / DESIGNED / ROADMAP)</td></tr>
+    <tr><td>Command center walkthrough</td><td>10-minute guided view, live in the hub</td></tr>
+    <tr><td>This brief</td><td>One page, forwardable</td></tr>
+  </table>
+
+  <div class="note">
+    Claims discipline: everything above is labeled. LIVE = demonstrable today. DESIGNED = architecture complete, pending access or decision. Nothing in this package simulates a capability it does not have.
+  </div>
+
+  <footer>
+    <span>WCS CI Sustainment &amp; Continuity · Part of Proof to Possibility</span>
+    <span>Prepared for mentor &amp; leadership review</span>
+  </footer>
+</div>

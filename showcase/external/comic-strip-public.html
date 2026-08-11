@@ -1,0 +1,174 @@
+<title>Proof to Possibility — Issue #1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    --paper:#F2EDE4; --ink:#0B1116; --teal:#1FA39D; --amber:#D98A3D;
+    --panel:#FBF8F2; --mut:#5B6B72;
+    --disp:"Arial Black","Segoe UI",system-ui,sans-serif;
+    --body:"Segoe UI",system-ui,sans-serif;
+    --mono:ui-monospace,"Cascadia Code",monospace;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--paper); color:var(--ink); font-family:var(--body);
+    padding:2rem 1rem 3rem;
+  }
+  .page{max-width:1000px; margin:0 auto}
+
+  /* masthead */
+  .masthead{
+    display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap;
+    gap:.5rem; border-bottom:4px solid var(--ink); padding-bottom:.8rem; margin-bottom:1.6rem;
+  }
+  .masthead h1{
+    font-family:var(--disp); font-size:clamp(1.8rem,5.5vw,3.2rem); margin:0;
+    letter-spacing:-.02em; text-transform:uppercase; line-height:.95;
+  }
+  .masthead h1 span{color:var(--teal)}
+  .issue{
+    font-family:var(--mono); font-size:.72rem; letter-spacing:.15em; text-transform:uppercase;
+    color:var(--paper); background:var(--ink); padding:.4rem .8rem;
+  }
+  .kicker{
+    font-family:var(--mono); font-size:.72rem; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--amber); width:100%;
+  }
+
+  /* strip grid */
+  .strip{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1.2rem}
+  .panel{
+    background:var(--panel);
+    border:3px solid var(--ink); border-radius:4px;
+    box-shadow:6px 6px 0 rgba(11,17,22,.9);
+    padding:1.2rem 1.2rem 1.4rem; position:relative; overflow:hidden;
+    display:flex; flex-direction:column; gap:.8rem; min-height:270px;
+  }
+  .panel .num{
+    position:absolute; top:.6rem; right:.8rem;
+    font-family:var(--disp); font-size:2.6rem; color:rgba(11,17,22,.08); line-height:1;
+  }
+  .panel .art{
+    height:88px; display:flex; align-items:center; gap:.6rem; margin-top:.2rem;
+  }
+  .panel h2{
+    font-family:var(--disp); font-size:1.15rem; margin:0; text-transform:uppercase;
+    letter-spacing:.02em;
+  }
+  .panel h2 b{color:var(--teal)}
+  .caption{
+    background:var(--paper); border:2px solid var(--ink); padding:.6rem .8rem;
+    font-size:.92rem; line-height:1.5; margin:0;
+  }
+  .caption strong{color:var(--amber)}
+  .bubble{
+    align-self:flex-start; background:#fff; border:2px solid var(--ink); border-radius:14px;
+    padding:.5rem .9rem; font-size:.9rem; font-weight:700; position:relative; margin-left:.4rem;
+  }
+  .bubble::after{
+    content:""; position:absolute; left:1.1rem; bottom:-11px; width:0; height:0;
+    border:6px solid transparent; border-top-color:var(--ink); border-bottom-width:5px;
+  }
+  .halftone{
+    position:absolute; inset:auto -20px -20px auto; width:130px; height:130px; opacity:.14;
+    background:radial-gradient(circle, var(--ink) 1.6px, transparent 1.8px);
+    background-size:9px 9px; border-radius:50%;
+  }
+
+  /* CSS art pieces */
+  .door{width:44px; height:72px; border:3px solid var(--ink); border-radius:3px 3px 0 0; position:relative; background:var(--amber)}
+  .door::after{content:""; position:absolute; right:6px; top:34px; width:6px; height:6px; border-radius:50%; background:var(--ink)}
+  .door.open{transform:perspective(120px) rotateY(-28deg); transform-origin:left}
+  .steps{display:flex; align-items:flex-end; gap:4px}
+  .steps i{display:block; width:16px; background:var(--teal); border:2px solid var(--ink)}
+  .loopring{width:66px; height:66px; border:4px dashed var(--teal); border-radius:50%; position:relative; animation:spin 14s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){ .loopring{animation:none} }
+  .loopring::after{content:"↻"; position:absolute; inset:0; display:grid; place-items:center; font-size:1.5rem; color:var(--ink); font-weight:900}
+  .big{font-family:var(--disp); font-size:2.4rem; color:var(--teal); line-height:1}
+  .big small{display:block; font-family:var(--mono); font-size:.6rem; letter-spacing:.12em; color:var(--mut); text-transform:uppercase}
+  .crew{display:flex; gap:.45rem; align-items:center}
+  .crew i{width:26px; height:26px; border-radius:50%; border:2.5px solid var(--ink); display:block}
+  .crew i:nth-child(odd){background:var(--teal)} .crew i:nth-child(even){background:var(--amber)}
+  .crew .lead{width:40px; height:40px; background:var(--ink)}
+  .horizon{flex:1; height:60px; border-bottom:3px solid var(--ink); position:relative}
+  .horizon::before{content:""; position:absolute; left:12%; bottom:0; width:0; height:0; border:26px solid transparent; border-bottom:44px solid var(--teal)}
+  .horizon::after{content:"✦"; position:absolute; right:14%; top:2px; color:var(--amber); font-size:1.3rem}
+
+  footer{
+    max-width:1000px; margin:1.6rem auto 0; display:flex; justify-content:space-between;
+    flex-wrap:wrap; gap:.5rem; border-top:4px solid var(--ink); padding-top:.8rem;
+    font-family:var(--mono); font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--mut);
+  }
+  @media print{
+    body{padding:0} .panel{box-shadow:none; break-inside:avoid}
+  }
+</style>
+
+<div class="page">
+  <div class="masthead">
+    <span class="kicker">A true story · Concept preview while the interactive experience is in production</span>
+    <h1>Proof <span>to</span> Possibility</h1>
+    <span class="issue">Issue #1 · Fal Mensah</span>
+  </div>
+
+  <div class="strip">
+
+    <section class="panel">
+      <span class="num">01</span>
+      <div class="art"><div class="door"></div></div>
+      <h2>The <b>Doorway</b></h2>
+      <p class="caption">Some careers in tech start in server rooms. This one started in <strong>social work</strong> — caseloads, people, and systems that kept failing them.</p>
+      <div class="halftone"></div>
+    </section>
+
+    <section class="panel">
+      <span class="num">02</span>
+      <div class="art"><div class="steps"><i style="height:16px"></i><i style="height:28px"></i><i style="height:42px"></i><i style="height:58px"></i><i style="height:74px"></i></div></div>
+      <h2>The <b>Climb</b></h2>
+      <p class="caption">A skills-first <strong>apprenticeship</strong> opened a side door into enterprise tech. She brought the one skill no degree teaches: translating systems into human.</p>
+      <div class="halftone"></div>
+    </section>
+
+    <section class="panel">
+      <span class="num">03</span>
+      <div class="art"><div class="loopring"></div></div>
+      <h2>The <b>Loop</b></h2>
+      <p class="caption">She built <strong>DRIPS</strong>: Detect → Root Cause → Improve → Prove → Share. An operating loop designed to scale across all <strong>21 delivery teams</strong>. Zero new standing meetings.</p>
+      <div class="halftone"></div>
+    </section>
+
+    <section class="panel">
+      <span class="num">04</span>
+      <div class="art">
+        <span class="big">244<small>rooms · target was 100</small></span>
+        <span class="big" style="color:var(--amber)">94.2%<small>fleet compliance · audited</small></span>
+      </div>
+      <h2>The <b>Receipts</b></h2>
+      <p class="caption">2,721 devices categorized. Stale records separated from true failures — because a number you can't trust isn't proof, it's decoration.</p>
+      <div class="halftone"></div>
+    </section>
+
+    <section class="panel">
+      <span class="num">05</span>
+      <div class="art crew"><i class="lead"></i><i></i><i></i><i></i><i></i><i></i></div>
+      <h2>The <b>Crew</b></h2>
+      <div class="bubble">The tools don't save the day. They get their mission briefs from me.</div>
+      <p class="caption">Claude, Copilot, governed agents — a full stack of <strong>digital teammates</strong>, each with one clear job. Human judgment stays in command.</p>
+      <div class="halftone"></div>
+    </section>
+
+    <section class="panel">
+      <span class="num">06</span>
+      <div class="art"><div class="horizon"></div></div>
+      <h2>The <b>Invitation</b></h2>
+      <p class="caption">Every capability in this story is <strong>already in your stack</strong>. The proof is delivered. The possibility is yours. <em>Next issue: your team.</em></p>
+      <div class="halftone"></div>
+    </section>
+
+  </div>
+
+  <footer>
+    <span>Fal Mensah · Technical Business Integration · Program &amp; Product Operations</span>
+    <span>Interactive experience &amp; video — coming Monday</span>
+  </footer>
+</div>

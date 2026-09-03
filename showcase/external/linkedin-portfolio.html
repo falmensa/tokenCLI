@@ -1,0 +1,222 @@
+<title>Fal Mensah — Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    --ink:#0A1014;
+    --ink2:#111C23;
+    --line:rgba(120,185,195,.16);
+    --ivory:#F3EFE7;
+    --mut:#93A5AD;
+    --dim:#67787F;
+    --teal:#3ACFC7;
+    --amber:#EBA65E;
+    --disp:"Segoe UI",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+    --mono:ui-monospace,"Cascadia Code","SF Mono",Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--ink); color:var(--ivory);
+    font-family:var(--disp); line-height:1.6; font-size:17px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:660px; margin:0 auto; padding:0 1.4rem}
+  section{padding:3.2rem 0; border-bottom:1px solid var(--line)}
+  section:last-of-type{border-bottom:0}
+
+  .label{
+    font-family:var(--mono); font-size:.68rem; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--amber); margin:0 0 1.1rem;
+  }
+
+  /* hero */
+  .hero{
+    padding:4.5rem 0 3.4rem; border-bottom:1px solid var(--line);
+    background:
+      radial-gradient(600px 340px at 15% -10%, rgba(58,207,199,.10), transparent 62%),
+      radial-gradient(500px 300px at 95% 10%, rgba(235,166,94,.07), transparent 60%);
+  }
+  h1{
+    font-size:clamp(2.6rem,11vw,3.8rem); font-weight:800; letter-spacing:-.035em;
+    line-height:.98; margin:0 0 1rem;
+  }
+  .role{
+    font-family:var(--mono); font-size:.78rem; letter-spacing:.09em;
+    color:var(--teal); margin:0 0 1.6rem; line-height:1.9;
+  }
+  .thesis{
+    font-size:clamp(1.25rem,5vw,1.6rem); font-weight:600; line-height:1.35;
+    letter-spacing:-.015em; margin:0 0 1.4rem; text-wrap:balance;
+  }
+  .thesis b{color:var(--teal); font-weight:600}
+  .sub{color:var(--mut); font-size:1.02rem; margin:0; max-width:33rem}
+
+  /* stats */
+  .stats{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line)}
+  .stat{background:var(--ink2); padding:1.5rem 1.2rem}
+  .stat .n{
+    font-size:2.5rem; font-weight:800; letter-spacing:-.03em; line-height:1;
+    color:var(--teal); font-variant-numeric:tabular-nums;
+  }
+  .stat:nth-child(even) .n{color:var(--amber)}
+  .stat .c{font-size:.86rem; color:var(--mut); margin-top:.5rem; line-height:1.45}
+
+  h2{
+    font-size:1.5rem; font-weight:750; letter-spacing:-.02em;
+    margin:0 0 1.3rem; line-height:1.2; text-wrap:balance;
+  }
+  p{margin:0 0 1rem}
+  p:last-child{margin-bottom:0}
+
+  /* case studies */
+  .case{padding:1.5rem 0; border-top:1px solid var(--line)}
+  .case:first-of-type{border-top:0; padding-top:.4rem}
+  .case h3{
+    font-size:1.12rem; font-weight:700; margin:0 0 .9rem; letter-spacing:-.01em;
+  }
+  .case dl{margin:0; display:grid; gap:.7rem}
+  .case dt{
+    font-family:var(--mono); font-size:.62rem; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--dim); margin-bottom:.15rem;
+  }
+  .case dd{margin:0; color:var(--mut); font-size:.96rem}
+  .case dd.win{color:var(--ivory)}
+  .case dd.win b{color:var(--teal); font-weight:700}
+
+  /* loop */
+  .loop{display:flex; flex-wrap:wrap; gap:.45rem; margin:1.4rem 0 1.2rem}
+  .loop span{
+    font-family:var(--mono); font-size:.72rem; letter-spacing:.05em;
+    border:1px solid var(--line); color:var(--ivory);
+    padding:.5rem .8rem; border-radius:2px; background:var(--ink2);
+  }
+  .loop span b{color:var(--teal); font-weight:700}
+
+  .rail{
+    border-left:2px solid var(--amber); padding:.15rem 0 .15rem 1.1rem;
+    color:var(--ivory); font-size:1.06rem; margin:1.6rem 0 0;
+  }
+
+  /* origin */
+  .origin p{font-size:1.06rem}
+  .origin .kick{font-weight:700; color:var(--ivory)}
+
+  /* cta */
+  .cta{padding:3.4rem 0 4rem}
+  .links{display:flex; flex-direction:column; gap:.6rem; margin-top:1.5rem}
+  .links a{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:1rem 1.2rem; border:1px solid var(--line); background:var(--ink2);
+    color:var(--ivory); text-decoration:none; font-weight:600; font-size:1rem;
+    border-radius:3px;
+  }
+  .links a:hover{border-color:var(--teal); color:var(--teal)}
+  .links a:focus-visible{outline:2px solid var(--teal); outline-offset:2px}
+  .links a span{font-family:var(--mono); font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:var(--dim)}
+  .links a:hover span{color:var(--teal)}
+
+  footer{
+    padding:1.6rem 0 3rem; font-family:var(--mono); font-size:.66rem;
+    letter-spacing:.12em; text-transform:uppercase; color:var(--dim);
+  }
+  @media (min-width:620px){
+    .stats{grid-template-columns:repeat(4,1fr)}
+    .case dl{grid-template-columns:1fr 1fr 1fr; gap:1.2rem}
+  }
+</style>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>Fal Mensah</h1>
+    <p class="role">Project &amp; Product Operations<br>Continuous Improvement · Human-Centered AI</p>
+    <p class="thesis">I turn scattered work into <b>systems people can actually run</b>.</p>
+    <p class="sub">Three years inside a global pharmaceutical enterprise's digital workplace organization, building the operating models, evidence trails, and AI-enabled workflows that make improvement stick after the project ends.</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <section>
+    <p class="label">Proof</p>
+    <div class="stats">
+      <div class="stat"><div class="n">244</div><div class="c">meeting rooms audited in one run. The target was 100.</div></div>
+      <div class="stat"><div class="n">94.2%</div><div class="c">device compliance baseline, independently verifiable</div></div>
+      <div class="stat"><div class="n">2,721</div><div class="c">managed devices categorized and audited</div></div>
+      <div class="stat"><div class="n">21</div><div class="c">delivery teams the operating model was designed to scale across</div></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="label">Selected work</p>
+
+    <div class="case">
+      <h3>A continuous improvement loop that runs itself</h3>
+      <dl>
+        <dt>The problem</dt>
+        <dd>Improvement work was happening. Ownership, evidence, and reuse were not connected to it.</dd>
+        <dt>What I built</dt>
+        <dd>DRIPS: a five-stage operating loop wired across intake, execution, and evidence. No new standing meetings.</dd>
+        <dt>The result</dt>
+        <dd class="win">A repeatable model with <b>proof attached to every stage</b>, designed for any team to adopt.</dd>
+      </dl>
+    </div>
+
+    <div class="case">
+      <h3>One front door for incoming work</h3>
+      <dl>
+        <dt>The problem</dt>
+        <dd>Requests arrived from every direction. Routing, ownership, and status lived in people's heads.</dd>
+        <dt>What I built</dt>
+        <dd>A service blueprint: categorized intake, decision logic, named owners, visible handoffs.</dd>
+        <dt>The result</dt>
+        <dd class="win">Leaders could <b>see the pipeline</b>. Delivery teams could trust it.</dd>
+      </dl>
+    </div>
+
+    <div class="case">
+      <h3>Evidence you can actually audit</h3>
+      <dl>
+        <dt>The problem</dt>
+        <dd>Compliance reporting mixed stale sync records in with genuine failures. The number looked fine and meant nothing.</dd>
+        <dt>What I built</dt>
+        <dd>A classification standard that separates missing data from true failures, plus the runbook to reproduce it.</dd>
+        <dt>The result</dt>
+        <dd class="win">A baseline leadership can <b>defend in a room</b>, not just present in one.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section>
+    <p class="label">How I work</p>
+    <h2>Detect what is real. Prove what changed. Leave something reusable.</h2>
+    <div class="loop">
+      <span><b>D</b>etect</span>
+      <span><b>R</b>oot cause</span>
+      <span><b>I</b>mprove</span>
+      <span><b>P</b>rove</span>
+      <span><b>S</b>hare</span>
+    </div>
+    <p>Each platform gets one deliberate job. Jira executes. SharePoint holds the evidence. Teams coordinates. AI accelerates drafting and synthesis, with a human accountable for every decision that ships.</p>
+    <p class="rail">The skill is not using AI. It is knowing which tool belongs where, what it should be given, and what it should produce.</p>
+  </section>
+
+  <section class="origin">
+    <p class="label">How I got here</p>
+    <h2>I started in social work.</h2>
+    <p>Years of sitting with people, learning how systems fail them, and finding the way through anyway.</p>
+    <p>I came into enterprise technology through an apprenticeship, not a computer science degree.</p>
+    <p class="kick">That turned out to be the advantage.</p>
+    <p>I can translate a platform into plain language, because I had to learn it that way myself. I notice adoption problems early, because I have spent my career watching what happens when a system ignores the person using it.</p>
+  </section>
+
+  <section class="cta">
+    <p class="label">Let's build something</p>
+    <h2>If your team has work that keeps getting redone, I want to hear about it.</h2>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener">Connect on LinkedIn <span>Profile</span></a>
+      <a href="mailto:YOUR-EMAIL">Send me a note <span>Email</span></a>
+    </div>
+  </section>
+
+  <footer>Fal Mensah · Proof to Possibility</footer>
+</div>
